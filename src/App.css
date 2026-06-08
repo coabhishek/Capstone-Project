@@ -186,3 +186,177 @@
     text-align: center;
   }
 }
+
+
+.testimonials {
+  background-color: #495e57;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials h1 {
+  color: #f4ce14;
+  margin-bottom: 50px;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  width: 260px;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 15px 0;
+}
+
+.testimonial-card p {
+  color: #555;
+  margin-top: 10px;
+}
+
+
+/* /chicago css */
+
+
+.chicago {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chicago-content {
+  flex: 1;
+}
+
+.chicago-content h1 {
+  color: #f4ce14;
+  font-size: 4rem;
+}
+
+.chicago-content h2 {
+  margin-bottom: 20px;
+}
+
+.chicago-content p {
+  max-width: 500px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.chicago-images {
+  position: relative;
+  width: 400px;
+  height: 350px;
+}
+
+.chicago-images img {
+  width: 250px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  position: absolute;
+}
+
+.img1 {
+  top: 0;
+  right: 0;
+}
+
+.img2 {
+  bottom: 0;
+  left: 0;
+  border: 5px solid white;
+}
+
+
+/* form css */
+
+.booking-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-input label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-input input,
+.form-input select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-input input:focus,
+.form-input select:focus {
+  outline: none;
+  border-color: #495e57;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: #f4ce14;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* booking page css */
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.5;
+}
