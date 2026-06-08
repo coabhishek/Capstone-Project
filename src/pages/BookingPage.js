@@ -1,12 +1,14 @@
-import React from 'react'
-import BookingForm from '../components/BookingForm'
+import React from "react";
+import BookingForm from "../components/BookingForm";
 
-function BookingPage() {
+export default function BookingPage({ availableTimes, dispatch, submitForm }) {
   return (
-    <div> 
-      <BookingForm/>
+    <div>
+      <BookingForm
+        availableTimes={availableTimes}
+        dispatch={dispatch}
+        submitForm={submitForm}
+      />
     </div>
-  )
+  );
 }
-
-export default BookingPage

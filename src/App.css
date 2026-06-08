@@ -290,7 +290,7 @@
 }
 
 
-/* form css */
+/* form css
 
 .booking-form {
   max-width: 400px;
@@ -359,4 +359,190 @@
   margin: 0 auto;
   color: #666;
   line-height: 1.5;
+} */
+
+/* background */
+.booking-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  margin: auto;
+  background: linear-gradient(135deg, #f9d423, #ff4e50);
+  padding: 20px;
+}
+
+/* card */
+.booking-card {
+  width: 360px;
+  background: white;
+  border: 1px solid black;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  animation: pop 0.3s ease-in-out;
+}
+
+/* heading */
+.booking-card h2 {
+  text-align: center;
+  margin-bottom: 0;
+  color: #333;
+}
+
+.booking-card p {
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+  margin-top: 0;
+}
+
+/* inputs */
+.booking-card input,
+.booking-card select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.2s;
+}
+
+.booking-card input:focus,
+.booking-card select:focus {
+  border-color: #ff4e50;
+  box-shadow: 0 0 5px rgba(255, 78, 80, 0.4);
+}
+
+/* labels */
+.booking-card label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+  margin-top: 5px;
+}
+
+/* button */
+.booking-card button {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* animation */
+@keyframes pop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* confirme booking */
+
+/* background */
+.confirm-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  padding: 20px;
+}
+
+/* card */
+.confirm-card {
+  width: 360px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  text-align: center;
+  animation: pop 0.4s ease;
+}
+
+/* check icon */
+.check-icon {
+  width: 70px;
+  height: 70px;
+  background: #43cea2;
+  color: white;
+  font-size: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* heading */
+.confirm-card h1 {
+  color: #185a9d;
+  margin-bottom: 10px;
+}
+
+/* text */
+.confirm-card p {
+  color: #555;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* info box */
+.info-box {
+  background: #f5f5f5;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+/* button */
+.confirm-card button {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.confirm-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* animation */
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

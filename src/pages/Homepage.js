@@ -3,7 +3,6 @@ import CallToAction from "../components/CallToAction";
 import Specials from "../components/Specials";
 import CustomersSay from "../components/CustomersSay";
 import Chicago from "../components/Chicago";
-import BookingForm from "../components/BookingForm";
 
 function Homepage() {
   return (
@@ -13,7 +12,6 @@ function Homepage() {
       <Specials />
       <CustomersSay />
       <Chicago />
-      <BookingForm/>
     </main>
   );
 }

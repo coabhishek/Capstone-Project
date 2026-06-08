@@ -1,83 +1,133 @@
 import React, { useState } from "react";
-// import "./BookingForm.css";
 
-export default function BookingForm() {
-  const [guests, setGuests] = useState("")
-  const [time, setTime] = useState("17:00")
+export default function BookingForm({
+  availableTimes = [],
+  dispatch,
+  submitForm,
+}) {
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("17:00");
+  const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
-  const [date, setDate] = useState("")
 
-  const [availableTime] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
-  const formSubmit = (e) => {
+  const [touched, setTouched] = useState(false);
+
+  // ---------------- VALIDATION ----------------
+  const isDateValid = date !== "";
+  const isTimeValid = time !== "";
+  const isGuestsValid = guests >= 1 && guests <= 10;
+  const isOccasionValid = occasion !== "";
+
+  const isFormValid =
+    isDateValid && isTimeValid && isGuestsValid && isOccasionValid;
+
+  // ---------------- SUBMIT ----------------
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setTouched(true);
 
-    console.log({
-      date,
-      time,
-      guests,
-      occasion,
-    });
+    if (!isFormValid) return;
 
-    setGuests("");
-    setTime("17:00");
-    setOccasion("");
+    submitForm({ date, time, guests, occasion });
+
     setDate("");
-
-    alert("Form Submitted");
+    setTime("17:00");
+    setGuests(1);
+    setOccasion("");
+    setTouched(false);
   };
+
   return (
-    <>
-      <div className="booking-header">
-        <h1>Table Reservation</h1>
-        <p>
-          Choose your preferred date, time, and party size to reserve your table.
-          We look forward to serving you at Little Lemon.
-        </p>
-      </div>
+    <main className="booking-container">
+      <form
+        className="booking-card"
+        onSubmit={handleSubmit}
+        aria-label="Booking Form"
+      >
+        <h2 id="booking-title">Book Table</h2>
 
+        {/* DATE */}
+        <label htmlFor="res-date">Date</label>
+        <input
+          id="res-date"
+          type="date"
+          value={date}
+          required
+          aria-label="Reservation Date"
+          onChange={(e) => {
+            setDate(e.target.value);
+            dispatch({ type: "DATE_CHANGE", date: e.target.value });
+          }}
+        />
+        {!isDateValid && touched && (
+          <small className="error">Date is required</small>
+        )}
 
-      <form className="booking-form" onSubmit={formSubmit}>
-        <div className="form-input">
-          <label htmlFor="date-res">Date</label>
-          <input type="date" id="date-res" value={date} onChange={(e) => setDate(e.target.value)} />
-        </div>
-
-        <div className="form-input">
-          <label htmlFor="time-res">Time</label>
-          <select id="time-res" value={time} onChange={(e) => setTime(e.target.value)}>
-            {availableTime.map((time) => (
-              <option key={time} value={time}>
-                {time}
+        {/* TIME */}
+        <label htmlFor="res-time">Time</label>
+        <select
+          id="res-time"
+          value={time}
+          required
+          aria-label="Select Time"
+          onChange={(e) => setTime(e.target.value)}
+        >
+          {availableTimes.length > 0 ? (
+            availableTimes.map((t, i) => (
+              <option key={i} value={t}>
+                {t}
               </option>
-            ))}
-          </select>
-        </div>
+            ))
+          ) : (
+            <option>No times available</option>
+          )}
+        </select>
 
-        <div className="form-input">
-          <label htmlFor="guest-res">Guests</label>
-          <input type="number" id="guest-res" min={1} max={10} value={guests} onChange={(e) => setGuests(e.target.value)} />
-        </div>
+        {/* GUESTS */}
+        <label htmlFor="guests">Guests</label>
+        <input
+          id="guests"
+          type="number"
+          min="1"
+          max="10"
+          value={guests}
+          required
+          aria-label="Number of guests"
+          onChange={(e) => setGuests(Number(e.target.value))}
+        />
+        {!isGuestsValid && touched && (
+          <small className="error">Guests must be 1 to 10</small>
+        )}
 
-        <div className="form-input">
-          <label htmlFor="occasion-res">Occasion</label>
-          <select id="occasion-res" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
-            <option value="" >Select</option>
-            <option value="Birthday">Birthday</option>
-            <option value="Anniversary">Anniversary</option>
-          </select>
-        </div>
+        {/* OCCASION */}
+        <label htmlFor="occasion">Occasion</label>
+        <select
+          id="occasion"
+          value={occasion}
+          required
+          aria-label="Select Occasion"
+          onChange={(e) => setOccasion(e.target.value)}
+        >
+          <option value="">Select</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Anniversary">Anniversary</option>
+        </select>
 
-        <button type="submit" className="submit-btn">
+        {!isFormValid && touched && (
+          <small className="error">
+            Please fill all fields correctly
+          </small>
+        )}
+
+        {/* BUTTON */}
+        <button
+          type="submit"
+          disabled={!isFormValid}
+          aria-label="On Click"
+        >
           Reserve Table
         </button>
       </form>
-    </>
+    </main>
   );
 }
