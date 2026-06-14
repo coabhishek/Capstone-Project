@@ -11,7 +11,7 @@ test("Renders the BookingForm heading", () => {
   );
 
   expect(
-    screen.getByText("Table Reservation")
+    screen.getByText("Book Table")
   ).toBeInTheDocument();
 });
 

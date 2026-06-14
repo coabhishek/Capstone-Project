@@ -187,7 +187,6 @@
   }
 }
 
-
 .testimonials {
   background-color: #495e57;
   padding: 80px 20px;
@@ -232,10 +231,7 @@
   margin-top: 10px;
 }
 
-
-/* /chicago css */
-
-
+/* chicago css */
 .chicago {
   max-width: 1200px;
   margin: 100px auto;
@@ -289,10 +285,10 @@
   border: 5px solid white;
 }
 
-
-/* form css
-
-.booking-form {
+/* ==========================================
+   COMMENTED OUT FORM & BOOKING HEADER CSS
+   ========================================== */
+/* .booking-form {
   max-width: 400px;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -342,8 +338,6 @@
   opacity: 0.9;
 }
 
-/* booking page css */
-
 .booking-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -359,7 +353,8 @@
   margin: 0 auto;
   color: #666;
   line-height: 1.5;
-} */
+} 
+*/
 
 /* background */
 .booking-container {
@@ -367,7 +362,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
   margin: auto;
   background: linear-gradient(135deg, #f9d423, #ff4e50);
   padding: 20px;
@@ -533,16 +527,4 @@
 .confirm-card button:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* animation */
-@keyframes pop {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
